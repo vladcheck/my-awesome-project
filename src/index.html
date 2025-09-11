@@ -14,16 +14,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <!-- Шапка сайта -->
-    <header>
-        <a href="/"><img src="../assets/favicon.ico" alt="logo"></a>
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+<body class="hero">
+    <header class="site-header">
+        <a class="site-header__brand" href="/"><img src="./../assets/favicon.ico" id="logo" alt="logo"></a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active"
+                        href="index.html">Главная</a>
+                </li>
+                <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta"
+                        href="./contacts.html">Связаться</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -42,7 +44,23 @@
         <!-- Секция 2 с якорем -->
         <section id="portfolio">
             <h2>Портфолио</h2>
-            <p>Примеры наших работ...</p>
+            <ul>
+                <li>
+                    <img src="../assets/images/card-640.jpg"
+                        srcset="../assets/images/card-640.png 640w, ../assets/images/card-960.png 960w, ../assets/images/card-1280.png 1280w"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px" alt="Проект: макет мобильного приложения"
+                        loading="lazy">
+                </li>
+                <li>
+                    <!-- Добавьте субтитры через <track> (WebVTT); poster — превью-кадр -->
+                    <video class="media" controls preload="metadata" playsinline width="960" height="540" poster="video/poster.jpg">
+                        <source src="../assets/video/teaser-1080.mp4" type="video/mp4"> <!-- основной формат -->
+                        <source src="../assetsvideo/teaser-720.webm" type="video/webm"> <!-- альтернатива -->
+                        <track kind="captions" srclang="ru" src="../assets/video/captions-ru.vtt" label="Русские субтитры" default>
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </li>
+            </ul>
         </section>
 
         <!-- Секция 3 с якорем -->
